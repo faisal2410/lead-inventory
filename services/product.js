@@ -13,6 +13,11 @@ exports.getProductsService = async (filters, queries) => {
   return {total,page,products};
 };
 
+exports.getSingleProductService = async (id) => {
+  const product = await Product.find(id);
+  return product;
+}
+
 exports.createProductService = async (data) => {
   const product = await Product.create(data);
   return product;
@@ -21,7 +26,7 @@ exports.createProductService = async (data) => {
 exports.updateProductByIdService = async (productId, data) => {
   const result = await Product.updateOne(
     { _id: productId },
-    { $inc: data },
+    { $set: data },
     {
       runValidators: true,
     }
@@ -33,18 +38,19 @@ exports.updateProductByIdService = async (productId, data) => {
 };
 
 exports.bulkUpdateProductService = async (data) => {
-  // console.log(data.ids,data.data)
-  // const result = await Product.updateMany({ _id: data.ids }, data.data, {
-  //     runValidators: true
-  // });
-
-  const products = [];
-
-  data.ids.forEach((product) => {
-    products.push(Product.updateOne({ _id: product.id }, product.data));
+  console.log(data.ids,data)
+  const result = await Product.updateMany({ _id: data.ids }, data, {
+      runValidators: true
   });
 
-  const result = await Promise.all(products);
+  // const products = [];
+  // console.log(data.ids)
+// problem.it is not working. we should find out later on
+  // data.ids.forEach((product) => {
+  //   products.push(Product.updateOne({ _id: product.id },product.data ));
+  // });
+
+  // const result = await Promise.all(products);
   console.log(result);
 
   return result;

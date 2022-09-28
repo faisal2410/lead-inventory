@@ -1,5 +1,6 @@
 const {
     getProductsService,
+    getSingleProductService,
     createProductService,
     updateProductByIdService,
     bulkUpdateProductService,
@@ -75,6 +76,26 @@ const {
       });
     }
   };
+
+  exports.getProduct = async (req, res, next) => {
+    try {
+        // console.log(req.params.id)
+        const id = {
+            _id: req.params.id
+        }
+        const product = await getSingleProductService(id)
+        res.status(200).json({
+            status: "success",
+            data: product
+        });
+    } catch (error) {
+        res.status(400).json({
+            status: "fail",
+            message: "can't get the data",
+            error: error.message,
+        });
+    }
+}
   
   exports.createProduct = async (req, res, next) => {
     try {
@@ -82,7 +103,7 @@ const {
   
       const result = await createProductService(req.body);
   
-      result.logger();
+      // result.logger();
   
       res.status(200).json({
         status: "success",
@@ -119,11 +140,11 @@ const {
   
   exports.bulkUpdateProduct = async (req, res, next) => {
     try {
-      console.log(req.body)
+      // console.log(req.body)
       const result = await bulkUpdateProductService(req.body);
   
       res.status(200).json({
-        stauts: "success",
+        status: "success",
         message: "Successfully updated the product",
       });
     } catch (error) {

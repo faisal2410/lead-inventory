@@ -28,21 +28,22 @@ const productSchema = mongoose.Schema({
     imageURLs: [{
       type: String,
       required: true,
-      validate: {
-        validator: (value) => {
-          if(!Array.isArray(value)){
-            return false;
-          }
-          let isValid = true;
-          value.forEach(url => {
-            if(!validator.isURL(url)){
-              isValid =  false;
-            }
-          });
-          return isValid;
-        },
-        message: "Please provide valid image urls"
-      }
+      // we have to validate that the image url is valid or not. Facing some problem at the time of validating. We should solve the problem later on
+      // validate: {
+      //   validator: (value) => {
+      //     if(!Array.isArray(value)){
+      //       return false;
+      //     }
+      //     let isValid = true;
+      //     value.forEach(url => {
+      //       if(!validator.isURL(url)){
+      //         isValid =  false;
+      //       }
+      //     });
+      //     return isValid;
+      //   },
+      //   message: "Please provide valid image urls"
+      // }
     }],
 
     category: {

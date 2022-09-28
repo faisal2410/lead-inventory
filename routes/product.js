@@ -1,10 +1,18 @@
-const router = require("express").Router();
+const express=require('express')
+const router=express.Router()
+const {getProducts,createProduct,updateProductById,bulkUpdateProduct,deleteProductById,bulkDeleteProduct}=require("../controllers/product")
 
-router.get("/",(req,res)=>{
-    res.status(200).json({
-        status: 200,
-        message:"Welcome to Lead Inventory Management System"
-    })
-})
 
-module.exports = router;
+router.patch("/bulk-update",bulkUpdateProduct);
+router.delete("/bulk-delete", bulkDeleteProduct)
+
+
+router.get("/",getProducts);
+router.post("/",createProduct);
+
+router.patch("/:id",updateProductById);
+router.delete("/:id",deleteProductById)
+
+
+
+module.exports=router

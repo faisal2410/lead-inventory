@@ -2,6 +2,8 @@ const express=require('express')
 const router=express.Router()
 const {getProducts,getProduct,createProduct,updateProductById,bulkUpdateProduct,deleteProductById,bulkDeleteProduct}=require("../controllers/product")
 
+const uploader = require("../middleware/uploader");
+
 
 router.patch("/bulk-update",bulkUpdateProduct);
 router.delete("/bulk-delete", bulkDeleteProduct)

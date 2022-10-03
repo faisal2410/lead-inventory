@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Schema.Types;
+const valid = require("validator");
+
 // schema design
 const productSchema = mongoose.Schema({
     name: {
@@ -28,22 +30,7 @@ const productSchema = mongoose.Schema({
     imageURLs: [{
       type: String,
       required: true,
-      // we have to validate that the image url is valid or not. Facing some problem at the time of validating. We should solve the problem later on
-      // validate: {
-      //   validator: (value) => {
-      //     if(!Array.isArray(value)){
-      //       return false;
-      //     }
-      //     let isValid = true;
-      //     value.forEach(url => {
-      //       if(!validator.isURL(url)){
-      //         isValid =  false;
-      //       }
-      //     });
-      //     return isValid;
-      //   },
-      //   message: "Please provide valid image urls"
-      // }
+      validate: [valid.isURL, "wrong url"]
     }],
 
     category: {

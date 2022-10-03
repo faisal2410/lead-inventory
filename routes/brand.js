@@ -3,11 +3,11 @@ const {createBrand,getBrands,getBrandById,updateBrand} = require("../controllers
 
 const router = express.Router();
 
-router.get("/",createBrand);
-router.post("/",getBrands)
+router.get("/brand",getBrands);
+router.post("/brand",createBrand)
 
-router.get("/:id",getBrandById);
-router.patch("/:id",updateBrand)
+router.get("/brand/:id",getBrandById);
+router.patch("/brand/:id",updateBrand)
 
 
 

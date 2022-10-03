@@ -3,10 +3,10 @@ const {createSupplier,getSuppliers,getSupplierById,updateSupplier} = require("..
 
 const router = express.Router();
 
-router.get("/",getSuppliers);
-router.post("/",createSupplier)
+router.get("/suppliers",getSuppliers);
+router.post("/supplier",createSupplier)
 
-router.get("/:id",getSupplierById);
-router.patch("/:id",updateSupplier);
+router.get("/supplier/:id",getSupplierById);
+router.patch("/supplier/:id",updateSupplier);
 
 module.exports = router;

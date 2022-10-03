@@ -6,9 +6,9 @@ const {getStocks,getStockById,createStock} = require('../controllers/stock')
 // router.route("/bulk-update").patch(stockController.bulkUpdateProduct);
 // router.route("/bulk-delete").delete(stockController.bulkDeleteProduct);
 
-router.get("/",getStocks);
-router.post("/",createStock);
-router.get("/:id",getStockById)
+router.get("/stocks",getStocks);
+router.post("/stock",createStock);
+router.get("/stock/:id",getStockById)
 
 
 // router.route("/:id")

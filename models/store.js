@@ -17,7 +17,7 @@ const storeSchema = mongoose.Schema(
           "rangpur",
           "mymensingh"
         ],
-        message: "{VALUE} is not  acorrect division!",
+        message: "{VALUE} is not  a correct division!",
       },
     },
     description: {

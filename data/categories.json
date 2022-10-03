@@ -1,18 +1,19 @@
 [
-    {
-        "name": "ACI",
-        "description": "Advanced Chemical Industries (ACI) Limited is one of the leading conglomerates in Bangladesh, with a multinational heritage. We have a mission to achieve business excellence through quality by understanding, accepting, meeting and exceeding customer expectations. We follow International Standards on Quality Management System to ensure consistent quality of products and services to achieve customer satisfaction.",
-        "email": "aci@test.com",
-        "location": "Honduras"
-    },
-    {
-        "name": "Fresh",
-        "description": "Fresh – a brand name of consumer goods from Meghna Group of Industries in Bangladesh.It offers a complete range of full cream milk products, wheat flour, wheat moida, wheat semolina (suji), refined soyabean oil, vacuum salt, spice powder, mix spice, lentil, natural drinking water, refined sugar & tea.",
-        "location": "Morocco"
-    },
-    {
-        "name": "Rupchanda",
-        "description": "pchanda made a foray with soyabean oil, the edible oil market was commodity-driven and the consumer awareness was extremely low. The market was dominated by ‘loose selling’- oil in readily packaged format was an unknown concept. From entering a category at a time when it was completely commodity driven to building a brand that today resonates with ‘happy family moments’ – a consumer need-state, transcending category level relations is remarkable. Every marketing activity in all spheres of Rupchanda Soyabean Oil is crafted and executed with the focused intent of improving the quality of life of its consumers.",
-        "location": "Gulisthan"
-    }
+  {
+    "name": "Rice",
+    "description": "Rice is very helthy. We should eat more rice.",
+    "imageURL": "https://chaldn.com/_mpimage/chinigura-rice-1-kg?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D48071&q=low&v=1&m=400&webp=1"
+  },
+
+  {
+    "name": "Oil",
+    "description": "Oil is fat.",
+    "imageURL": "https://chaldn.com/_mpimage/fresh-fortified-soyabean-oil-5-ltr?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D93160&q=best&v=1&m=400&webp=1"
+  },
+
+  {
+    "name": "Sugar",
+    "description": "Eat less sugar",
+    "imageURL": "https://chaldn.com/_mpimage/loose-white-sugar-1-kg?src=https%3A%2F%2Feggyolk.chaldal.com%2Fapi%2FPicture%2FRaw%3FpictureId%3D98364&q=best&v=1&m=400&webp=1"
+  }
 ]

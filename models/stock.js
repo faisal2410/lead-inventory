@@ -95,6 +95,7 @@ const stockSchema = mongoose.Schema({
     id: {
       type: ObjectId,
       ref: 'Supplier'
+      
     }
   },
 

@@ -45,6 +45,7 @@ exports.getSupplierById = async (req, res, next) => {
   const { id } = req.params;
   try {
     const supplier = await getSupplierByIdService(id);
+    console.log(supplier)
 
     if(!supplier){
       return res.status(400).json({
@@ -73,7 +74,7 @@ exports.updateSupplier = async (req, res, next) => {
 
     console.log(result);
 
-    if (!result.nModified) {
+    if (!result.modifiedCount) {
       return res.status(400).json({
         status: "fail",
         error: "Couldn't update the supplier with this id",

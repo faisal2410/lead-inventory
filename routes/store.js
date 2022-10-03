@@ -2,9 +2,9 @@ const express = require("express");
 const router = express.Router();
 const {getStores,createStore,getStoreById} = require("../controllers/store");
 
-router.get("/",getStores);
-router.post("/",createStore);
-router.get("/:id",getStoreById)
+router.get("/stores",getStores);
+router.post("/store",createStore);
+router.get("/store/:id",getStoreById)
 
 
 

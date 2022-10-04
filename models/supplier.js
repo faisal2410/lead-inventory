@@ -68,7 +68,7 @@ const supplierSchema = mongoose.Schema(
       lowercase: true,
       enum: {
         values: ["dhaka", "rajshahi", "chattogram", "sylhet", "khulna", "barishal", "rangpur", "mymensingh"],
-        message: "{VALUE} is not  acorrect division!",
+        message: "{VALUE} is not  a correct division!",
       },
     },
     imageURL: {

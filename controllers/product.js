@@ -7,6 +7,8 @@ const {
     deleteProductByIdService,
     bulkDeleteProductService,
   } = require("../services/product");
+
+  
   
   exports.getProducts = async (req, res, next) => {
     try {

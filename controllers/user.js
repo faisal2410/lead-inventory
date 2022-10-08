@@ -72,13 +72,22 @@ exports.login = async (req, res) => {
 
     const token = generateToken(user);
 
-    const { password: pwd, ...others } = user.toObject();
+    // const { password: pwd, ...others } = user.toObject();
+     // return user and token to client, exclude hashed password
+     user.password = undefined;
+     // send token in cookie
+     res.cookie("token", token, {
+      httpOnly: true,
+      // secure: true, // only works on https
+    });
+
+     // send user as json response
 
     res.status(200).json({
       status: "success",
       message: "Successfully logged in",
       data: {
-        user: others,
+        user,
         token,
       },
     });
@@ -93,7 +102,7 @@ exports.login = async (req, res) => {
 exports.getMe = async (req, res) => {
   try {
     const user = await findUserByEmail(req.user?.email);
-
+    
     res.status(200).json({
       status: "success",
       data: user,

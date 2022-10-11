@@ -15,7 +15,7 @@ const stockSchema = mongoose.Schema({
     trim: true,
     lowercase: true,
     minLength: [3, "Name must be at least 3 characters."],
-    maxLenght: [100, "Name is too large"],
+    maxLength: [100, "Name is too large"],
   },
   description: {
     type: String,

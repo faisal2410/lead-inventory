@@ -1,15 +1,26 @@
+const User=require("../models/user")
+const {expressjwt} =require("express-jwt");
+require("dotenv").config();
 
-module.exports = (...role) => {
+exports.requireSignin = expressjwt({
+  secret: process.env.JWT_SECRET,
+  algorithms: ["HS256"],
+});
 
-  return (req, res, next) => {
-    const userRole = req.user.role;
-    if(!role.includes(userRole)){
+
+exports.isAdmin = async (req, res, next) => {
+  console.log(req.auth)
+  try {
+    const user = await User.findById(req.auth._id);
+    if (user.role !== "admin") {
       return res.status(403).json({
-        status: "fail",
-        error: "You are not authorized to access this"
+        status:"Fail",
+        message:"Unauthorized.Admin resource"
       });
+    } else {
+      next();
     }
-
-    next();
-  };
+  } catch (err) {
+    console.log(err);
+  }
 };

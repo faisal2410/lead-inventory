@@ -74,7 +74,7 @@ const userSchema = mongoose.Schema(
     },
     status: {
       type: String,
-      default: "inactive",
+      default: "active",
       enum: ["active", "inactive", "blocked"],
     },
 
@@ -127,39 +127,3 @@ const User = mongoose.model("User", userSchema);
 
 module.exports = User;
 
-/*
-
-{
-    "email": "mezba1@test.com",
-    "password": "mezba123456#A",
-    "confirmPassword": "mezba123456#A",
-    "firstName": "Mezbaul Abedin",
-    "lastName": "Forhan",
-    "shippingAddress": "944 osthir Street",
-    "presentAddress": "944 osthir Street",
-    "permanentAddress": "944 Russell Street",
-    "imageURL": "https://i.ibb.co/WnFSs9Y/unnamed.webp"
-}
-
-
-//for manager
-/*
-"name":"Manager",
-"email":"managerctg@test.com",
-"password":"mezba123456##",
-"confirmPassword":"mezba123456##",
-"firtsName":"Manager of",
-"lastName":"CTG",
-"contactNumber":"11111111111",
-"shippingAddress:"944 osthir Street",
-"division":"chattogram",
-"imageURL":"https://i.ibb.co/WnFSs9Y/unnamed.webp",
-"status":"active",
-"emergencyContactNumber":"01712345678",
-"presentAddress":"944 osthir Street",
-"permanentAddress":"944 Russell Street",
-"nationalIdImageURL":"https://i.ibb.co/WnFSs9Y/unnamed.webp",
-
-
-
-*/

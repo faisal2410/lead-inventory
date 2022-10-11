@@ -1,6 +1,6 @@
 const { signupService, findUserByEmail, findUserByToken } = require("../services/user");
 
-const { generateToken } = require("../helpers/token");
+const {generateToken}=require("../helpers/auth")
 
 exports.signup = async (req, res) => {
   try {
@@ -23,17 +23,7 @@ exports.signup = async (req, res) => {
   }
 };
 
-/**
- * 1. Check if Email and password are given
- * 2. Load user with email
- * 3. if not user send res
- * 4. compare password
- * 5. if password not correct send res
- * 6. check if user is active
- * 7. if not active send res
- * 8. generate token
- * 9. send user and token
- */
+
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -71,9 +61,6 @@ exports.login = async (req, res) => {
     }
 
     const token = generateToken(user);
-
-    // const { password: pwd, ...others } = user.toObject();
-     // return user and token to client, exclude hashed password
      user.password = undefined;
      // send token in cookie
      res.cookie("token", token, {
@@ -101,7 +88,7 @@ exports.login = async (req, res) => {
 
 exports.getMe = async (req, res) => {
   try {
-    const user = await findUserByEmail(req.user?.email);
+    const user = await findUserByEmail(req.auth?.email);
     
     res.status(200).json({
       status: "success",

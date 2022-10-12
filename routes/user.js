@@ -10,7 +10,13 @@ router.post("/signup",signup);
 
 router.post("/login", login);
 
-router.get("/me", requireSignin, getMe);
+router.get("/me", requireSignin,isAdmin, getMe);
+router.get("/",(req,res)=>{
+    res.status(200).json({
+        status:"success",
+        message:"Hello from Ostad Inventory"
+    })
+})
 
 
 module.exports = router;

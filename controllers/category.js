@@ -28,7 +28,7 @@ exports.createCategory = async (req, res) => {
 
     res.status(200).json({
       status: "success",
-      messgae: "Category created successfully!",
+      message: "Category created successfully!",
       data: result,
     });
   } catch (error) {

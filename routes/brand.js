@@ -9,7 +9,4 @@ router.post("/brand",createBrand)
 router.get("/brand/:id",getBrandById);
 router.patch("/brand/:id",updateBrand)
 
-
-
-
 module.exports = router;

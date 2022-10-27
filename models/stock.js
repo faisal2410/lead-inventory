@@ -105,9 +105,7 @@ const stockSchema = mongoose.Schema({
     min: 0
   }
 
-}, {
-  timestamps: true,
-})
+}, {timestamps:true,versionKey:false})
 
 
 const Stock = mongoose.model('Stock', stockSchema)

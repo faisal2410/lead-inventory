@@ -85,9 +85,7 @@ const supplierSchema = mongoose.Schema(
       default: "active",
       enum: ["active", "inactive"],
     }
-  }, {
-    timestamps:true
-  }
+  }, {timestamps:true,versionKey:false}
 );
 
 const Supplier = mongoose.model("Supplier", supplierSchema);

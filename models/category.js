@@ -14,9 +14,7 @@ const categorySchema = mongoose.Schema({
     type: String,
     validate: [validator.isURL, "Please provide a valid URL"]
   }
-}, {
-  timestamps: true
-})
+}, {timestamps:true,versionKey:false})
 
 const Category = mongoose.model('Category', categorySchema)
 module.exports = Category;

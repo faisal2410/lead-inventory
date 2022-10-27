@@ -50,9 +50,7 @@ const productSchema = mongoose.Schema({
       }
     }
     
-  }, {
-    timestamps: true,
-  })
+  }, {timestamps:true,versionKey:false})
   
 
    productSchema.pre('save',function(next){

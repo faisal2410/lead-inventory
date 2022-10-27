@@ -37,9 +37,7 @@ const storeSchema = mongoose.Schema(
       }
     },
   },
-  {
-    timestamps: true
-  }
+  {timestamps:true,versionKey:false}
 );
 
 const Store = mongoose.model("Store", storeSchema);

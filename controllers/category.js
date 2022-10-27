@@ -35,7 +35,7 @@ exports.createCategory = async (req, res) => {
     res.status(400).json({
       status: "fail",
       message: " Data is not inserted ",
-      error: error.message,
+      error: error
     });
   }
 };

@@ -42,9 +42,7 @@ const brandSchema = mongoose.Schema({
     default: "active"
   }
 
-}, {
-  timestamps: true
-});
+}, {timestamps:true,versionKey:false});
 
 const Brand = mongoose.model("Brand", brandSchema);
 

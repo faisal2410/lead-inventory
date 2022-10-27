@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 const crypto = require("crypto");
-
 const bcrypt = require("bcryptjs");
 
 
@@ -85,9 +84,7 @@ const userSchema = mongoose.Schema(
     passwordResetToken: String,
     passwordResetExpires: Date,
   },
-  {
-    timestamps: true,
-  }
+  { timestamps: true,versionKey: false }
 );
 
 userSchema.pre("save", function (next) {
